@@ -10,6 +10,7 @@
 #import "Friend.h"
 #import "FriendGroup.h"
 #import "FriendCell.h"
+#import "FriendGroupHeader.h"
 
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -28,7 +29,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
+    //3 设置组头的高度
+    self.tableView.sectionHeaderHeight = 44;}
 #pragma - 数据源方法
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
@@ -52,7 +54,14 @@
     return cell;
 }
 
-
+#pragma mark - headerView的代理方法
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    FriendGroupHeader *headerView = [FriendGroupHeader headerViewWithTableView:tableView];
+    FriendGroup *friendGroup = self.friendGroups[section];
+    headerView.friendGroup = friendGroup;
+    return headerView;
+}
 
 //隐藏状态栏
 - (BOOL) prefersStatusBarHidden

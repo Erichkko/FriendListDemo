@@ -10,6 +10,7 @@
 		FE0216121DD33E350044CC79 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0216111DD33E350044CC79 /* Friend.m */; };
 		FE0216151DD343EE0044CC79 /* FriendGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0216141DD343EE0044CC79 /* FriendGroup.m */; };
 		FE02161B1DD35ADE0044CC79 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE02161A1DD35ADE0044CC79 /* FriendCell.m */; };
+		FE02161E1DD360720044CC79 /* FriendGroupHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FE02161D1DD360720044CC79 /* FriendGroupHeader.m */; };
 		FE8AC7B61DD20CE10097E1DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8AC7B51DD20CE10097E1DD /* AppDelegate.m */; };
 		FE8AC7B91DD20CE80097E1DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8AC7B81DD20CE80097E1DD /* ViewController.m */; };
 		FE8AC7BC1DD20E880097E1DD /* friends.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE8AC7BB1DD20E880097E1DD /* friends.plist */; };
@@ -26,6 +27,8 @@
 		FE0216141DD343EE0044CC79 /* FriendGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroup.m; sourceTree = "<group>"; };
 		FE0216191DD35ADE0044CC79 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
 		FE02161A1DD35ADE0044CC79 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
+		FE02161C1DD360720044CC79 /* FriendGroupHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroupHeader.h; sourceTree = "<group>"; };
+		FE02161D1DD360720044CC79 /* FriendGroupHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroupHeader.m; sourceTree = "<group>"; };
 		FE8AC7B41DD20CE10097E1DD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FE8AC7B51DD20CE10097E1DD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FE8AC7B71DD20CE80097E1DD /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 			children = (
 				FE0216191DD35ADE0044CC79 /* FriendCell.h */,
 				FE02161A1DD35ADE0044CC79 /* FriendCell.m */,
+				FE02161C1DD360720044CC79 /* FriendGroupHeader.h */,
+				FE02161D1DD360720044CC79 /* FriendGroupHeader.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				FE8AC7B61DD20CE10097E1DD /* AppDelegate.m in Sources */,
 				FE02161B1DD35ADE0044CC79 /* FriendCell.m in Sources */,
 				FEA6D36A1DD1FE2800CEF0B0 /* main.m in Sources */,
+				FE02161E1DD360720044CC79 /* FriendGroupHeader.m in Sources */,
 				FE0216121DD33E350044CC79 /* Friend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
