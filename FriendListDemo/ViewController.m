@@ -13,7 +13,7 @@
 #import "FriendGroupHeader.h"
 
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ViewController ()<FriendGroupHeaderDeleagte>
 @property (nonatomic,strong) NSArray *friendGroups;
 @end
 
@@ -30,7 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //3 设置组头的高度
-    self.tableView.sectionHeaderHeight = 44;}
+    self.tableView.sectionHeaderHeight = 44;
+    
+}
 #pragma - 数据源方法
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
@@ -41,8 +43,8 @@
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     FriendGroup *friendGroup = self.friendGroups[section];
-//    return friendGroup.isExpend?friendGroup.friends.count:0;
-    return friendGroup.friends.count;
+    return friendGroup.isExpend?friendGroup.friends.count:0;
+//    return friendGroup.friends.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,8 +60,10 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     FriendGroupHeader *headerView = [FriendGroupHeader headerViewWithTableView:tableView];
+    headerView.delegate = self;
     FriendGroup *friendGroup = self.friendGroups[section];
     headerView.friendGroup = friendGroup;
+    headerView.tag = section;
     return headerView;
 }
 
@@ -67,5 +71,18 @@
 - (BOOL) prefersStatusBarHidden
 {
     return true;
+}
+
+#pragma mark -header的点击事件
+- (void)headerViewDidClickNameBtn:(FriendGroupHeader *)headerView
+{
+    //重新加载表格
+    [self.tableView reloadData];
+  
+
+//    不可变的无符号的整数集合
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:headerView.tag];
+    
+    [self.tableView reloadSections:indexSet  withRowAnimation:UITableViewRowAnimationNone];
 }
 @end

@@ -52,7 +52,7 @@
         //超出部分不剪裁
         self.nameView.imageView.clipsToBounds = NO;
         
-        
+        [self.nameView addTarget:self action:@selector(nameClick) forControlEvents:UIControlEventTouchUpInside];
         //Label的个数设置
         UILabel *countLabel = [[UILabel alloc] init];
         [self.contentView addSubview:countLabel];
@@ -90,6 +90,24 @@
         self.nameView.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
     }else{//合并
         self.nameView.imageView.transform = CGAffineTransformMakeRotation(0);
+    }
+}
+
+
+//点击组头按钮的时候执行
+- (void)nameClick
+{
+    self.friendGroup.expend = !self.friendGroup.isExpend;
+    
+    
+    if (self.friendGroup.isExpend) {//展开
+        self.nameView.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
+    }else{//合并
+        self.nameView.imageView.transform = CGAffineTransformMakeRotation(0);
+    }
+    //3
+    if ([self.delegate respondsToSelector:@selector(headerViewDidClickNameBtn:)]) {
+        [self.delegate headerViewDidClickNameBtn:self];
     }
 }
 @end
